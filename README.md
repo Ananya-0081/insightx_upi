@@ -220,5 +220,5 @@ Auto-redeploys on every `git push`.
 ## 👥 Team
 Lannisters:
 
-Aryan Singh
+Aryan Singh |
 Ananya Sharma
