@@ -218,5 +218,7 @@ Auto-redeploys on every `git push`.
 ---
 
 ## 👥 Team
+Lannisters:
 
-Built for the UPI Payment Intelligence Hackathon, 2025.
+Aryan Singh
+Ananya Sharma
