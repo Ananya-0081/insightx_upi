@@ -1,4 +1,4 @@
-# ⚡ InsightX BI — Conversational UPI Payment Intelligence
+# InsightX BI — Conversational UPI Payment Intelligence
 
 > Ask anything about your UPI data in plain English. Get instant charts, insights, and risk flags — no SQL, no code.
 
@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 **[https://insightxupi-hzd9ybappvibnqhrd5tyign.streamlit.app/](https://insightxupi-hzd9ybappvibnqhrd5tyign.streamlit.app/)**
 
@@ -16,7 +16,7 @@ No installation required. Works in any modern browser.
 
 ---
 
-## 📌 What is InsightX BI?
+##  What is InsightX BI?
 
 InsightX BI is a conversational business intelligence platform for UPI payment analytics. It analyses **250,000 real-world UPI transactions** from 2024 and lets anyone — not just data scientists — ask business questions in natural language.
 
@@ -24,17 +24,17 @@ InsightX BI is a conversational business intelligence platform for UPI payment a
 
 | Feature | Description |
 |---|---|
-| 🧠 **Natural Language Queries** | Rule-based NLP parser — no LLM API required |
-| 📊 **6 Chart Types** | Auto-selected: bar, line, donut, gauge, comparison, anomaly |
-| 🔁 **Context Memory** | "What about Karnataka?" inherits previous metric automatically |
-| ⚔️ **Comparison Mode** | "HDFC vs SBI", "3G vs 5G", "P2P vs P2M" — side-by-side |
-| 🚨 **Risk Flags** | Automatic thresholds for fraud (>0.25%) and failure (>5.5%) |
-| 📈 **Anomaly Detection** | Z-score based outlier detection across all grouped results |
-| 💡 **Context-Aware Follow-ups** | Suggested next questions based on current query |
+| **Natural Language Queries** | Rule-based NLP parser — no LLM API required |
+|  **6 Chart Types** | Auto-selected: bar, line, donut, gauge, comparison, anomaly |
+|  **Context Memory** | "What about Karnataka?" inherits previous metric automatically |
+|  **Comparison Mode** | "HDFC vs SBI", "3G vs 5G", "P2P vs P2M" — side-by-side |
+|  **Risk Flags** | Automatic thresholds for fraud (>0.25%) and failure (>5.5%) |
+|  **Anomaly Detection** | Z-score based outlier detection across all grouped results |
+|  **Context-Aware Follow-ups** | Suggested next questions based on current query |
 
 ---
 
-## 🏃 Run Locally
+## Run Locally
 
 ### Prerequisites
 - Python 3.9+
@@ -76,7 +76,7 @@ rapidfuzz
 
 ---
 
-## 💬 Sample Queries to Try
+##  Sample Queries to Try
 
 ```
 # Basic metrics
@@ -112,7 +112,7 @@ rapidfuzz
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 User Query (Natural Language)
@@ -153,7 +153,7 @@ User Query (Natural Language)
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 insightx/
@@ -177,7 +177,7 @@ insightx/
 
 ---
 
-## 📊 Dataset
+##  Dataset
 
 | Property | Value |
 |---|---|
@@ -192,7 +192,7 @@ insightx/
 
 ---
 
-## 🧩 Supported Query Types
+##  Supported Query Types
 
 | Intent | Example | Chart |
 |---|---|---|
@@ -205,7 +205,7 @@ insightx/
 
 ---
 
-## 🔧 Deployment
+##  Deployment
 
 Deployed on **Streamlit Cloud** (free tier):
 
@@ -217,7 +217,7 @@ Auto-redeploys on every `git push`.
 
 ---
 
-## 👥 Team
+##  Team
 Lannisters:
 
 Aryan Singh |
