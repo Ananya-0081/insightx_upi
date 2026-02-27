@@ -104,19 +104,63 @@ with st.sidebar:
     show_anomalies   = st.toggle("Highlight Anomalies", value=True)
 
 # ══════════════════════════════════════════════════════════════
-#  HEADER
+#  HEADER (Fixed + Dynamic + Safe)
 # ══════════════════════════════════════════════════════════════
-c1, c2, c3 = st.columns([1, 5, 4])
-with c1: st.markdown("# ⚡")
-with c2:
-    st.markdown("## InsightX — UPI Payment Intelligence")
-    st.caption(f"2,50,000 transactions · {schema['date_range'][0]} to {schema['date_range'][1]}")
-with c3:
-    k1, k2, k3, k4 = st.columns(4)
-    for col, val, lbl in [(k1,"2.5L","Txns"),(k2,"4.95%","Fail"),(k3,"0.19%","Fraud"),(k4,"₹1,312","Avg")]:
-        col.metric(lbl, val)
-st.divider()
 
+st.markdown("## ⚡ InsightX — UPI Payment Intelligence")
+st.caption(f"{schema['total_rows']:,} transactions · {schema['date_range'][0]} to {schema['date_range'][1]}")
+
+# --- SAFE COLUMN HANDLING ---
+cols_lower = {c.lower().strip(): c for c in df.columns}
+
+# Detect amount column safely
+amount_col = None
+for c in df.columns:
+    if "amount" in c.lower():
+        amount_col = c
+        break
+
+# Compute metrics safely
+total_txns = len(df)
+
+failure_rate = (
+    df["transaction_status"].str.lower().eq("failed").mean()
+    if "transaction_status" in df.columns else 0
+)
+
+fraud_rate = (
+    df["fraud_flag"].mean()
+    if "fraud_flag" in df.columns else 0
+)
+
+avg_amount = (
+    df[amount_col].mean()
+    if amount_col else 0
+)
+
+# --- FORMATTERS ---
+def format_lakh(value):
+    return f"{value/100000:.1f}L" if value >= 100000 else f"{value:,}"
+
+def format_percent(value):
+    return f"{value*100:.2f}%"
+
+# --- KPI ROW ---
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric("Transactions", format_lakh(total_txns))
+
+with col2:
+    st.metric("Failure Rate", format_percent(failure_rate))
+
+with col3:
+    st.metric("Fraud Rate", format_percent(fraud_rate))
+
+with col4:
+    st.metric("Avg Amount", f"₹{avg_amount:,.0f}")
+
+st.divider()
 # ══════════════════════════════════════════════════════════════
 #  HELPERS
 # ══════════════════════════════════════════════════════════════
