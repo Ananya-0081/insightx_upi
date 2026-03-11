@@ -215,10 +215,4 @@ Deployed on **Streamlit Cloud** (free tier):
 
 Auto-redeploys on every `git push`.
 
----
-
-##  Team
-Lannisters:
-
-Aryan Singh |
-Ananya Sharma
+--
